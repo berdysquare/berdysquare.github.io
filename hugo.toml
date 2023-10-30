@@ -1,23 +1,60 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'Ultra Marine Online'
-theme = 'LoveIt'
+baseURL = "https://blog.umol.cc/"
 
+# Change the default theme to be use when building the site with Hugo
+# theme = "LoveIt"
+theme = "PaperMod"
 
-[params]
-  # site default theme ["auto", "light", "dark"]
-  defaultTheme = "auto"
-  # public git repo url only then enableGitInfo is true
-  gitRepo = ""
-  # LoveIt NEW | 0.1.1 which hash function used for SRI, when empty, no SRI is used
-  # ["sha256", "sha384", "sha512", "md5"]
-  fingerprint = ""
-  # LoveIt NEW | 0.2.0 date format
-  dateFormat = "2006-01-02"
-  # website title for Open Graph and Twitter Cards
-  title = "Ultra Marine Online"
-  # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "This is my cool site hahahahaha"
+# website title
+title = "Ultra Marine"
+
+# language code ["en", "zh-CN", "fr", "pl", ...]
+languageCode = "zh-CN"
+# language name ["English", "简体中文", "Français", "Polski", ...]
+languageName = "简体中文"
+
+# Author config
+[author]
+  name = "um"
+  email = ""
+  link = ""
+
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
 
 # Header config
   [params.header]
@@ -30,7 +67,7 @@ theme = 'LoveIt'
       # URL of the LOGO
       logo = ""
       # title name
-      name = "Ultra Marine Online"
+      name = "Ultra Marine"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -50,11 +87,11 @@ theme = 'LoveIt'
       gravatarEmail = ""
       # URL of avatar shown in home page
       # avatarURL = "https://avatars.githubusercontent.com/u/34125770?v=4"
-      avatarURL = "images/avatar.png"
+      avatarURL = "images/notion-avatar.png"
       # LoveIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
-      title = "xy"
+      title = ""
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "Ultra Marine Online"
+      subtitle = "Ultra Marine"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -63,119 +100,26 @@ theme = 'LoveIt'
       disclaimer = ""
 
 [params.social]
-  [params.social.Mastodon]
+  [params.social.Steam]
     # weight when arranging icons (the greater the weight, the later the icon is positioned)
     weight = 0
     # your social ID
-    id = "@xxxx"
+    id = ""
     # prefix of your social link
-    prefix = "https://mastodon.social/"
+    prefix = ""
     # content hovering on the icon
     title = "Mastodon"
   [params.social.bilibili]
     # weight when arranging icons (the greater the weight, the later the icon is positioned)
     weight = 1
     # your social ID
-    id = "@xxxx"
+    id = ""
     # prefix of your social link
-    prefix = "https://mastodon.social/"
+    prefix = ""
     # content hovering on the icon
     title = "bilibili"
 
-
-
-# determines default content language ["en", "zh-cn", "fr", "pl", ...]
-defaultContentLanguage = "zh-cn"
-
-[languages]
-  [languages.en]
-    weight = 1
-    title = "Sky"
-    languageCode = "en"
-    languageName = "English"
-    [[languages.en.menu.main]]
-      weight = 1
-      identifier = "posts"
-      pre = ""
-      post = ""
-      name = "Posts"
-      url = "/posts/"
-      title = ""
-    [[languages.en.menu.main]]
-      weight = 2
-      identifier = "tags"
-      pre = ""
-      post = ""
-      name = "Tags"
-      url = "/tags/"
-      title = ""
-    [[languages.en.menu.main]]
-      weight = 3
-      identifier = "categories"
-      pre = ""
-      post = ""
-      name = "Categories"
-      url = "/categories/"
-      title = ""
-
-  [languages.zh-cn]
-    weight = 2
-    title = "我的全新 Hugo 网站"
-    languageCode = "zh-CN"
-    languageName = "简体中文"
-    hasCJKLanguage = true
-    [[languages.zh-cn.menu.main]]
-      weight = 1
-      identifier = "posts"
-      pre = ""
-      post = ""
-      name = "文章"
-      url = "/posts/"
-      title = ""
-    [[languages.zh-cn.menu.main]]
-      weight = 2
-      identifier = "tags"
-      pre = ""
-      post = ""
-      name = "标签"
-      url = "/tags/"
-      title = ""
-    [[languages.zh-cn.menu.main]]
-      weight = 3
-      identifier = "categories"
-      pre = ""
-      post = ""
-      name = "分类"
-      url = "/categories/"
-      title = ""
-
-  [languages.fr]
-    weight = 3
-    title = "Mon nouveau site Hugo"
-    languageCode = "fr"
-    languageName = "Français"
-    [[languages.fr.menu.main]]
-      weight = 1
-      identifier = "posts"
-      pre = ""
-      post = ""
-      name = "Postes"
-      url = "/posts/"
-      title = ""
-    [[languages.fr.menu.main]]
-      weight = 2
-      identifier = "tags"
-      pre = ""
-      post = ""
-      name = "Balises"
-      url = "/tags/"
-      title = ""
-    [[languages.fr.menu.main]]
-      weight = 3
-      identifier = "categories"
-      name = "Catégories"
-      pre = ""
-      post = ""
-      url = "/categories/"
-      title = ""
-
+# PaperMod config
+[params.homeInfoParams]
+Title = "👋 💡🎻📡🏃"
+Content = "\"when you don't create things, you become defined by your tastes rather than ability. your tastes only narrow & exclude people. so create.\""
